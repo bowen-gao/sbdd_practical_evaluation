@@ -74,10 +74,10 @@ def main(args):
 
     # Load model
     #logger.info("loading model(s) from {}".format(args.path))
-    #state = checkpoint_utils.load_checkpoint_to_cpu(args.path)
+    state = checkpoint_utils.load_checkpoint_to_cpu(args.path)
     task = tasks.setup_task(args)
     model = task.build_model(args)
-    #model.load_state_dict(state["model"], strict=False)
+    model.load_state_dict(state["model"], strict=False)
 
     # Move models to GPU
     if use_fp16:
@@ -105,7 +105,7 @@ def main(args):
     
     max_sims = []
 
-    fda_reps = task.encode_unimol_mols_once(model, "FDA_Approved.lmdb", "emb", "atoms", "coordinates")
+    fda_reps = task.encode_mols_once(model, "FDA_Approved.lmdb", "drugclip_emb", "atoms", "coordinates")
 
     fda_reps = fda_reps[0]
 
@@ -114,11 +114,11 @@ def main(args):
     for target in tqdm(targets):
         
         mol_path = os.path.join(root_path, target, "mols.lmdb")
-        emb_dir = os.path.join(root_path, target, "emb")
+        emb_dir = os.path.join(root_path, target, "drugclip_emb")
         # remove emb_dir
         #os.system(f"rm -rf {emb_dir}")
         
-        mol_reps, mol_names, labels = task.encode_unimol_mols_once(model, mol_path, emb_dir, "atoms", "coordinates")
+        mol_reps, mol_names, labels = task.encode_mols_once(model, mol_path, emb_dir, "atoms", "coordinates")
 
         # load pickle
 
@@ -128,15 +128,16 @@ def main(args):
 
         ligand_path = os.path.join(root_path, target, "ligand.lmdb")
         
-        ligand_reps, ligand_names, _ = task.encode_unimol_mols_once(model, ligand_path, emb_dir, "atoms", "coordinates")
+        ligand_reps, ligand_names, _ = task.encode_mols_once(model, ligand_path, emb_dir, "atoms", "coordinates")
 
-        test_path = "/drug/sbdd_bench/ar_pdbbind_0.9/mols"
-        #test_path = "/drug/sbdd_bench/p2m_pcba/mols"
+        test_path = "/drug/sbdd_bench/ligan_pcba/mols"
+        test_path = "/drug/sbdd_bench/p2m_pcba/mols"
+        test_path = "/drug/sbdd_bench/p2m_pdbbind_0.6/mols"
         
         generate_mols_path = os.path.join(test_path, target + ".lmdb")
         
         try:
-            generate_reps, generate_names, _ = task.encode_unimol_mols_once(model, generate_mols_path, os.path.join(test_path, "emb"), "atoms", "coordinates")
+            generate_reps, generate_names, _ = task.encode_mols_once(model, generate_mols_path, os.path.join(test_path, "drugclip_emb"), "atoms", "coordinates")
         except:
             continue
         
@@ -153,7 +154,7 @@ def main(args):
 
         # calculate similarity
         #print(generate_reps.shape, pocket_reps.shape)
-        sim = np.dot(ligand_reps, fda_reps.T)
+        sim = np.dot(ligand_reps, pocket_reps.T)
 
         # sim = np.max(sim, axis=1)
 

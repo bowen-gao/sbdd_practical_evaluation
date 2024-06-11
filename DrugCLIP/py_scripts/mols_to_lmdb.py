@@ -27,9 +27,9 @@ def write_lmdb(out_list, save_path):
             #print('{:0>10d}'.format(i), pickle.dumps(out_list[i]))
             lmdb_txn.put(str(i).encode('ascii'), pickle.dumps(out_list[i]))
 
-path = "/drug/sbdd_bench/ar_pdbbind_0.9"
+path = "/drug/sbdd_bench/ligan_pdbbind_0.9"
 
-path = "/drug/sbdd_bench/ar_pcba"
+path = "/drug/sbdd_bench/ligan_pcba"
 
 
 
@@ -42,7 +42,7 @@ for file in os.listdir(path):
         continue
     target = file.split(".")[0]
 
-    target = target.split("_")[1]
+    #target = target.split("_")[1]
 
     # read sdf file
 

@@ -14,7 +14,7 @@ CUDA_VISIBLE_DEVICES="7" python ./unimol/encode.py --user-dir ./unimol $data_pat
        --results-path $results_path \
        --num-workers 8 --ddp-backend=c10d --batch-size $batch_size \
        --task drugclip --loss in_batch_softmax --arch drugclip  \
-       --max-pocket-atoms 256 \
+       --max-pocket-atoms 511 \
        --fp16 --fp16-init-scale 4 --fp16-scale-window 256  --seed 1 \
        --log-interval 100 --log-format simple \
        --finetune-pocket-model $finetune_pocket_model \
