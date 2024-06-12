@@ -30,7 +30,7 @@ LIT-PCBA test set
 
 generated molecules by different methods for targets in DUD-E
 
-### LITPCBA_generated_mols.zip
+### PCBA_generated_mols.zip
 
 generated molecules by different methods for targets in LIT-PCBA
 
@@ -41,14 +41,69 @@ generated molecules by different methods for targets in LIT-PCBA
 
 ## Model Evaluation
 
-All the generated Mols are in DUDE_generated_mols.zip and LITPCBA_generated_mols.zip. 
-
-For DUD-E test:
+All the generated Mols are in DUDE_generated_mols.zip and PCBA_generated_mols.zip. 
 
 
+### Using fingerprints to do evaluation
+
+```bash
+cd Fingerprint_Eval
+```
+
+to do similaritiy based eval on DUD-E dataset
+
+```bash
+python sim_dude.py
+```
+
+to do similaritiy based eval on LIT-PCBA dataset
+
+```bash
+python sim_pcba.py
+```
+
+to do virtual screening eval on DUD-E dataset
+
+```bash
+python vs_dude.py
+```
+
+to do virtual screening eval on LIT-PCBA dataset
+
+```bash
+python vs_pcba.py
+```
 
 
-for LIT-PCBA test
+
+
+bash test_sbdd.sh
+
+
+
+
+### Using Deep Encoders to do evaluation
+
+```bash
+
+cd Encoder_Eval
+
+bash test_sbdd.sh
+
+```
+
+change the parametes in test_sbdd.sh
+
+change encoder to drugclip or unimol
+
+change metric to vs(virtual screening), sim(similarities), or score(DrugCLIP score)
+
+change test path to point to DUD-E or LIT-PCBA path downloaded from Hugging Face Dir
+
+change model path to point to the model outputs downloaded from Hugging Face Dir
+
+
+
 
 
 
