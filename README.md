@@ -42,7 +42,13 @@ mol_pre_no_h_220816.pt: weights for pretrained Uni-Mol molecular Encoder
 
 pocket_pre_220816.pt: weights for pretrained Uni-Mol pocketr Encoder
 
-### Model Training and Sampling
+
+## Environment Setup
+
+use sbdd.yaml and encoder.yaml
+
+
+## Model Training and Sampling
 
 
 
