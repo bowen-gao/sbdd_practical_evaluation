@@ -242,9 +242,9 @@ if __name__ == "__main__":
 
 
 
-    root_path = "./DUD-E"
+    root_path = "/mnt/nfs-ssd/data/sbdd_data/DUD-E/DUD-E"
     
-    output_path = "path/to/output_dir"
+    output_path = "/mnt/nfs-ssd/data/gaobowen/ar_pdbbind_0.6"
     
     targets = os.listdir(root_path)
     auc_list = []
@@ -273,7 +273,7 @@ if __name__ == "__main__":
     import multiprocessing as mp
     pool = mp.Pool(101)
     for jobs in targets:
-        pool.apply_async(func=vs_generated_e3fp, args= (jobs.strip(),), callback=call_back)
+        pool.apply_async(func=vs_generated_morgan, args= (jobs.strip(),), callback=call_back)
     pool.close()
     pool.join()
 

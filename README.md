@@ -8,7 +8,7 @@ The dataset is hosted at [HuggingFace Dataset Dir](https://huggingface.co/datase
 It should contain following files:
 ### PDBBind.lmdb.zip
 
-processed pdbbind data for training
+processed pdbbind data for training in lmdb format
 
 ### PDBBind-DUD_E_FLAPP_0.6.pkl
 
@@ -28,12 +28,19 @@ LIT-PCBA test set
 
 ### DUDE_generated_mols.zip
 
-generated molecules by different methods for targets in DUD-E
+generated molecules by different methods for targets in DUD-E. 
 
 ### PCBA_generated_mols.zip
 
 generated molecules by different methods for targets in LIT-PCBA
 
+## pretrain_weights.zip
+
+drugclip.pt: weights for pretrained DrugCLIP model
+
+mol_pre_no_h_220816.pt: weights for pretrained Uni-Mol molecular Encoder
+
+pocket_pre_220816.pt: weights for pretrained Uni-Mol pocketr Encoder
 
 ### Model Training and Sampling
 
@@ -68,11 +75,6 @@ to do virtual screening eval on DUD-E dataset
 python vs_dude.py
 ```
 
-to do virtual screening eval on LIT-PCBA dataset
-
-```bash
-python vs_pcba.py
-```
 
 
 
@@ -91,6 +93,8 @@ cd Encoder_Eval
 bash test_sbdd.sh
 
 ```
+
+Note that the pretrained weights in Hugging Face dataset dir should be downloaded.
 
 change the parametes in test_sbdd.sh
 
