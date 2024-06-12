@@ -6,23 +6,36 @@
 The dataset is hosted at [HuggingFace Dataset Dir](https://huggingface.co/datasets/bgao95/Practical_SBDD)
 
 It should contain following files:
+### PDBBind.lmdb.zip
 
-PDBBind.lmdb.zip: processed pdbbind data for training
+processed pdbbind data for training
 
-PDBBind-DUD_E_FLAPP_0.6.pkl: split file for 0.6 version
+### PDBBind-DUD_E_FLAPP_0.6.pkl
 
-PDBBind-DUD_E_FLAPP_0.9.pkl: split file for 0.9 version
+split file for 0.6 version
 
-DUDE.zip: DUD-E test set
+### PDBBind-DUD_E_FLAPP_0.9.pkl
 
-LIT-PCBA.zip: LIT-PCBA test set
+split file for 0.9 version
 
-DUDE_generated_mols.zip: generated molecules by different methods for targets in DUD-E
+### DUDE.zip
 
-LITPCBA_generated_mols.zip: generated molecules by different methods for targets in LIT-PCBA
+DUD-E test set
+
+### LIT-PCBA.zip
+
+LIT-PCBA test set
+
+### DUDE_generated_mols.zip
+
+generated molecules by different methods for targets in DUD-E
+
+### LITPCBA_generated_mols.zip
+
+generated molecules by different methods for targets in LIT-PCBA
 
 
-## Model Training and Sampling
+### Model Training and Sampling
 
 
 
