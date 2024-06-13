@@ -64,7 +64,7 @@ TargetDiff: https://github.com/guanjq/targetdiff
 
 MolCRAFT: https://github.com/AlgoMole/MolCRAFT
 
-Modified Code for each model can be found at model dir
+Modified Code for each model can be found at **models** dir
 
 
 
