@@ -1,5 +1,8 @@
 # sbdd_practical_evaluation
 
+This GitHub repository contains the dataset and relevant code for the paper:
+
+**From Theory to Therapy: Reframing SBDD Model Evaluation via Practical Metrics**
 
 ## Dataset
 
