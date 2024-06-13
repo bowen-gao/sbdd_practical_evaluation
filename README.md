@@ -8,31 +8,31 @@ The dataset is hosted at [HuggingFace Dataset Dir](https://huggingface.co/datase
 It should contain following files:
 ### PDBBind.lmdb.zip
 
-processed pdbbind data for training in lmdb format
+processed pdbbind data for training in lmdb format. Docs for lmdb can be found at: https://lmdb.readthedocs.io/en/release/
 
 ### PDBBind-DUD_E_FLAPP_0.6.pkl
 
-split file for 0.6 version
+train/valid split file for 0.6 version
 
 ### PDBBind-DUD_E_FLAPP_0.9.pkl
 
-split file for 0.9 version
+train/valid  split file for 0.9 version
 
 ### DUDE.zip
 
-DUD-E test set
+DUD-E test set. Each directory is a target and contains all needed files for evaluation.
 
 ### LIT-PCBA.zip
 
-LIT-PCBA test set
+LIT-PCBA test set. Each directory is a target and contains all needed files for evaluation.
 
 ### DUDE_generated_mols.zip
 
-generated molecules by different methods for targets in DUD-E. 
+generated molecules by different methods for targets in DUD-E. Molecules are in .sdf format.
 
 ### PCBA_generated_mols.zip
 
-generated molecules by different methods for targets in LIT-PCBA
+generated molecules by different methods for targets in LIT-PCBA. Molecules are in .sdf format.
 
 ## pretrain_weights.zip
 
