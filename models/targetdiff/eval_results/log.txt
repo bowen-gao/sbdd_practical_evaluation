@@ -1,0 +1,37 @@
+[2023-11-29 17:27:17,989::evaluate::INFO] Load generated data done! sample_id[0:99] examples for evaluation.
+[2023-11-29 17:28:40,763::evaluate::INFO] Evaluate done! 10000 samples in total.
+[2023-11-29 17:28:40,763::evaluate::INFO] mol_stable:	0.2587
+[2023-11-29 17:28:40,763::evaluate::INFO] atm_stable:	0.8471
+[2023-11-29 17:28:40,763::evaluate::INFO] recon_success:	0.9158
+[2023-11-29 17:28:40,763::evaluate::INFO] eval_success:	0.0000
+[2023-11-29 17:28:40,763::evaluate::INFO] complete:	0.8408
+[2023-11-29 17:28:40,763::evaluate::INFO] JS bond distances of complete mols: 
+[2023-11-29 17:28:40,763::evaluate::INFO] JSD_6-6|4:	None
+[2023-11-29 17:28:40,763::evaluate::INFO] JSD_6-6|1:	None
+[2023-11-29 17:28:40,763::evaluate::INFO] JSD_6-8|1:	None
+[2023-11-29 17:28:40,763::evaluate::INFO] JSD_6-7|1:	None
+[2023-11-29 17:28:40,763::evaluate::INFO] JSD_6-8|2:	None
+[2023-11-29 17:28:40,763::evaluate::INFO] JSD_6-6|2:	None
+[2023-11-29 17:28:40,763::evaluate::INFO] JSD_6-7|4:	None
+[2023-11-29 17:28:40,764::evaluate::INFO] JSD_6-7|2:	None
+[2023-11-29 17:28:40,765::evaluate::INFO] JSD_CC_2A:	nan
+[2023-11-29 17:28:40,765::evaluate::INFO] JSD_All_12A:	nan
+[2023-11-29 17:30:26,636::evaluate::INFO] Load generated data done! sample_id[0:99] examples for evaluation.
+[2023-11-29 17:30:45,698::evaluate::INFO] Load generated data done! sample_id[0:99] examples for evaluation.
+[2023-11-29 17:32:02,322::evaluate::INFO] Evaluate done! 10000 samples in total.
+[2023-11-29 17:32:02,322::evaluate::INFO] mol_stable:	0.2587
+[2023-11-29 17:32:02,322::evaluate::INFO] atm_stable:	0.8471
+[2023-11-29 17:32:02,322::evaluate::INFO] recon_success:	0.9158
+[2023-11-29 17:32:02,322::evaluate::INFO] eval_success:	0.0000
+[2023-11-29 17:32:02,322::evaluate::INFO] complete:	0.8408
+[2023-11-29 17:32:02,322::evaluate::INFO] JS bond distances of complete mols: 
+[2023-11-29 17:32:02,322::evaluate::INFO] JSD_6-6|4:	None
+[2023-11-29 17:32:02,322::evaluate::INFO] JSD_6-6|1:	None
+[2023-11-29 17:32:02,322::evaluate::INFO] JSD_6-8|1:	None
+[2023-11-29 17:32:02,322::evaluate::INFO] JSD_6-7|1:	None
+[2023-11-29 17:32:02,322::evaluate::INFO] JSD_6-8|2:	None
+[2023-11-29 17:32:02,322::evaluate::INFO] JSD_6-6|2:	None
+[2023-11-29 17:32:02,322::evaluate::INFO] JSD_6-7|4:	None
+[2023-11-29 17:32:02,322::evaluate::INFO] JSD_6-7|2:	None
+[2023-11-29 17:32:02,323::evaluate::INFO] JSD_CC_2A:	nan
+[2023-11-29 17:32:02,324::evaluate::INFO] JSD_All_12A:	nan

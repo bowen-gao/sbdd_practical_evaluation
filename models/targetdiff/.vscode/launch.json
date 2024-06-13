@@ -1,0 +1,64 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "this file",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "train",
+            "type": "python",
+            "request": "launch",
+            "program": "scripts/train_diffusion.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "configs/training.yml",
+                "--device",
+                "cuda:4",
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "sample",
+            "type": "python",
+            "request": "launch",
+            "program": "scripts/sample_diffusion.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "configs/sampling.yml",
+                "--data_id",
+                "0",
+                "--device",
+                "cuda:1",
+                "--ckpt",
+                "/nfs/data/targetdiff_data/ckpts/targetdiff_unimol_xattnCatRespectively_alllayers.pt"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "evaluate",
+            "type": "python",
+            "request": "launch",
+            "program": "scripts/evaluate_diffusion.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "./outputs_targetdiff",
+                "--docking_mode",
+                "vina_score",
+                "--protein_root",
+                "/nfs/data/test_set",
+                "--eval_num_examples",
+                "5",
+            ],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

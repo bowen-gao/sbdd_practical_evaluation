@@ -1,0 +1,204 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "this file",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "targetdiff_train",
+            "type": "python",
+            "request": "launch",
+            "program": "scripts/train_diffusion.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "configs/training.yml",
+                "--device",
+                "cuda:0",
+                // "--wandb",
+                // "test"
+            ],
+            "cwd": "${workspaceFolder}/targetdiff",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+
+        },
+        {
+            "name": "targetdiff_sample",
+            "type": "python",
+            "request": "launch",
+            "program": "scripts/sample_diffusion.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "configs/sampling.yml",
+                "--data_id",
+                "0",
+                "--device",
+                "cuda:0",
+                "--ckpt",
+                "/data/targetdiff_data/ckpts/PDBBind_filtered_by_DUD_E_FLAPP_0.5.pt"
+            ],
+            "cwd": "${workspaceFolder}/targetdiff",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+        },
+        {
+            "name": "targetdiff_evaluate",
+            "type": "python",
+            "request": "launch",
+            "program": "scripts/evaluate_diffusion.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "/data/targetdiff_data/sample_output/PDBBind_filtered_by_DUD_E_BLAST_17519",
+                "--docking_mode",
+                "vina_score",
+                "--save_as_sdf"
+                // "--eval_num_examples",
+                // "5",
+            ],
+            "cwd": "${workspaceFolder}/targetdiff",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+        },
+        {
+            "name": "pocket2mol_train",
+            "type": "python",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--config",
+                "./configs/train.yml",
+                "--device",
+                "cuda:6",
+                // "--wandb",
+                // "test"
+            ],
+            "cwd": "${workspaceFolder}/Pocket2Mol",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+
+        },
+        {
+            "name": "pocket2mol_sample",
+            "type": "python",
+            "request": "launch",
+            "program": "sample.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--data_id",
+                "0",
+                "--device",
+                "cuda:5",
+                "--ckpt",
+                // "/data/pocket2mol_data/ckpts/pretrained_Pocket2Mol.pt",
+                "/data/pocket2mol_data/ckpts/PDBBind-DUD_E_FLAPP_0.9.pt",
+            ],
+            "cwd": "${workspaceFolder}/Pocket2Mol",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+        },
+        {
+            //python /project/Pocket2Mol/evaluation/evaluate.py 0_hivpr --result_root /data/pocket2mol_data/sample_output/PDBBind-DUD_E_FLAPP_0.6 --protein_root /data/DUD-E/raw/hivpr/receptor.pdb
+            "name": "pocket2mol_evaluate",
+            "type": "python",
+            "request": "launch",
+            "program": "evaluation/evaluate.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "1_akt2",
+                "--result_root",
+                "/data/pocket2mol_data/sample_output/PDBBind-DUD_E_FLAPP_0.6",
+                "--protein_root",
+                "/data/DUD-E/raw/akt2/receptor.pdb"
+            ],
+            "cwd": "${workspaceFolder}/Pocket2Mol",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+        },
+        {
+            "name": "AR_train",
+            "type": "python",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "./configs/train_main_model.yml",
+                "--device",
+                "cuda:3",
+                // "--wandb",
+                // "test"
+            ],
+            "cwd": "${workspaceFolder}/AR",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+
+        },
+        {
+            //python sample.py --data_id 0 --device cuda:0 --outdir /data/AR_data/PCBA_sample_output/PDBBind-DUD_E_FLAPP_0.9 --main_ckpt /data/AR_data/ckpts/PDBBind-DUD_E_FLAPP_0.9.pt --frontier_ckpt /data/AR_data/frontier_ckpts/PDBBind-DUD_E_FLAPP_0.9.pt 
+            "name": "AR_sample",
+            "type": "python",
+            "request": "launch",
+            "program": "sample.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--data_id",
+                "0",
+                "--device",
+                "cuda:0",
+                "--outdir",
+                "/data/AR_data/PCBA_sample_output/PDBBind-DUD_E_FLAPP_0.9",
+                "--main_ckpt",
+                "/data/AR_data/ckpts/PDBBind-DUD_E_FLAPP_0.9.pt",
+                "--frontier_ckpt",
+                "/data/AR_data/frontier_ckpts/PDBBind-DUD_E_FLAPP_0.9.pt"
+            ],
+            "cwd": "${workspaceFolder}/AR",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+        },
+        {
+            "name": "druggps_train",
+            "type": "python",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--device",
+                "cuda:6",
+                // "--wandb",
+                // "test",
+                "--resume",
+                "/data/druggps_data/ckpts/PDBBind-DUD_E_FLAPP_0.6.pt.bak"
+            ],
+            "cwd": "${workspaceFolder}/DrugGPS_ICML23",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+
+        },
+        {
+            "name": "druggps_sample",
+            "type": "python",
+            "request": "launch",
+            "program": "sample_new.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--data_id",
+                "1",
+                // "--device",
+                // "cuda:6",
+                // "--ckpt",
+                // // "/data/pocket2mol_data/ckpts/pretrained_Pocket2Mol.pt",
+                // "./checkpoints/checkpoint.pt",
+            ],
+            "cwd": "${workspaceFolder}/DrugGPS_ICML23",
+            "pythonPath": "/home/tanhaichuan/.conda/envs/sbdd/bin/python"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+data:
+  # name: pl
+  # path: /data/DUD-E/raw
+  # index_path: /data/DUD-E/
+  # data_split_path: 
+  # id_split_path: 
+  # split_name: 
+  # dataset_name: DUD-E
+
+  name: pl
+  path: /data/lit_pcba/raw
+  index_path: /data/lit_pcba/
+  data_split_path: 
+  id_split_path: 
+  split_name: 
+  dataset_name: PCBA
+
+
+  transform:
+    ligand_atom_mode: add_aromatic
+    random_rot: False
+
+model:
+  checkpoint: #/nfs/data/targetdiff_data/ckpts/xattn_res_14200.pt
+
+sample:
+  seed: 2021
+  num_samples: 20
+  num_steps: 1000
+  pos_only: False
+  center_pos_mode: protein
+  sample_num_atoms: prior

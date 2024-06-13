@@ -1,0 +1,22 @@
+# @package _global_
+name: profsa_base
+notes: "Reproduce the results of ProfSA."
+
+defaults:
+  - override /model: drugclip
+  - override /scheduler: polynomial_decay
+
+trainer:
+  devices: 4
+  precision: "16-mixed"
+
+model:
+  cfg:
+    mol:
+      pretrained_weights: /data/prot_frag/pretrain/mol_pre_no_h_220816.pt
+      fixed: false
+    pocket:
+      pretrained_weights: /data/prot_frag/pretrain/pocket_pre_no_h_240130.pt
+      fixed: false
+
+seed: 1

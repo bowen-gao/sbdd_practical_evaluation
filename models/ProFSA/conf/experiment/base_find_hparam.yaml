@@ -1,0 +1,19 @@
+# @package _global_
+name: profsa_base_findhparam
+notes: "Basic settings of profsa base for finding hparam"
+
+defaults:
+  - override /model: drugclip
+  - override /scheduler: constant
+
+scheduler:
+  num_warmup_steps: 2000
+
+trainer:
+  devices: 4
+  precision: 32
+  max_epochs: 3
+
+mol:
+  pretrained_weights: /data/prot_frag/pretrain/mol_pre_no_h_220816.pt
+  fixed: true

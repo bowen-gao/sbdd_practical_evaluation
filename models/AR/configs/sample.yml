@@ -1,0 +1,30 @@
+dataset:
+  # name: pl
+  # path: /data/DUD-E/raw
+  # index_path: /data/DUD-E/
+  # data_split_path: 
+  # id_split_path: 
+  # split_name: 
+  # dataset_name: DUD-E
+
+  name: pl
+  path: /data/lit_pcba/raw
+  index_path: /data/lit_pcba/
+  data_split_path: 
+  id_split_path: 
+  split_name: 
+  dataset_name: PCBA
+
+# model:
+#   main:
+#     checkpoint: /data/AR_data/ckpts/PDBBind-DUD_E_FLAPP_0.9.pt
+#   frontier:
+#     checkpoint: /data/AR_data/frontier_ckpts/PDBBind-DUD_E_FLAPP_0.9.pt
+
+sample:
+  seed: 2020
+  num_samples: 100
+  beam_size: 300
+  logp_thres: -.inf
+  num_retry: 5ffffffffffffffffff
+  max_steps: 50

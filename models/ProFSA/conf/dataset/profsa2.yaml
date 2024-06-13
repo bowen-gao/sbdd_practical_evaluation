@@ -1,0 +1,23 @@
+_target_: src.dataset.profsa2.PocketMolDataModule
+num_workers: 8
+pin_memory: true
+batch_size:
+  train: 48
+  val: 64
+dataset_cfg:
+  train:
+    db_path: /data/prot_frag/train_ligand_pocket/train.small.lmdb
+    max_pocket_atoms: 256
+    pocket_atom_key: pocket_atoms
+    pocket_coord_key: pocket_coordinates
+    mol_atom_key: lig_atoms_real
+    mol_coord_key: lig_coord_real
+    other_feat_keys: [feat, smi, pocket]
+  val:
+    db_path: /data/prot_frag/train_ligand_pocket/valid.lmdb
+    max_pocket_atoms: ${..train.max_pocket_atoms}
+    pocket_atom_key: ${..train.pocket_atom_key}
+    pocket_coord_key: ${..train.pocket_coord_key}
+    mol_atom_key: ${..train.mol_atom_key}
+    mol_coord_key: ${..train.mol_coord_key}
+    other_feat_keys: ${..train.other_feat_keys}

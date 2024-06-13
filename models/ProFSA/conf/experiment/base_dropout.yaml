@@ -1,0 +1,23 @@
+# @package _global_
+name: profsa_base_dropout
+notes: "Reproduce the results of ProfSA."
+
+defaults:
+  - override /model: drugclip
+  - override /scheduler: polynomial_decay
+
+trainer:
+  devices: 4
+  precision: 32
+
+model:
+  cfg:
+    mol:
+      pretrained_weights: /data/prot_frag/pretrain/mol_pre_no_h_220816.pt
+      fixed: true
+    pocket:
+      dropout: 0.15
+      emb_dropout: 0.15
+      attention_dropout: 0.15
+      activation_dropout: 0.15
+      pooler_dropout: 0.15

@@ -1,0 +1,22 @@
+_target_: src.dataset.profsa.ProFSADataModule
+num_workers: 8
+pin_memory: true
+batch_size:
+  train: 48
+  val: 64
+dataset_cfg:
+  train:
+    data_dir: /data/pdbbind_2020/
+    data_file: pdbbind_2020_clean_for_ProFSA.lmdb
+    mol_dict_file: dict_mol.txt
+    pocket_dict_file: dict_pkt.txt
+    max_pocket_atoms: 256
+    max_seq_len: 512
+    shuffle: true
+    seed: ${seed}
+    ligand_atoms_key: atoms
+    ligand_coord_key: coordinates
+    pocket_atoms_key: pocket_atoms
+    pocket_coord_key: pocket_coordinates
+    affinity_key: affinity
+    max_num: 100
