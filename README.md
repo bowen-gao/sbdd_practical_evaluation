@@ -50,6 +50,22 @@ use sbdd.yaml and encoder.yaml
 
 ## Model Training and Sampling
 
+The code for models used in our benchmark is from their official repositories: 
+
+LiGAN: https://github.com/mattragoza/LiGAN
+
+AR: https://github.com/luost26/3D-Generative-SBDD
+
+Pocket2Mol: https://github.com/pengxingang/Pocket2Mol
+
+TargetDiff: https://github.com/guanjq/targetdiff
+
+MolCRAFT: https://github.com/AlgoMole/MolCRAFT
+
+We did some modifications to fit our dataset. 
+
+Modified Code for each model can be found at model dir
+
 
 
 ## Model Evaluation
