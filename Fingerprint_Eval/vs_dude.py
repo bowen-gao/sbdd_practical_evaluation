@@ -242,9 +242,9 @@ if __name__ == "__main__":
 
 
 
-    root_path = "/mnt/nfs-ssd/data/sbdd_data/DUD-E/DUD-E"
+    root_path = "./DUD-E"
     
-    output_path = "/mnt/nfs-ssd/data/gaobowen/ar_pdbbind_0.6"
+    output_path = "/path/to/output_dir"
     
     targets = os.listdir(root_path)
     auc_list = []

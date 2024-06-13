@@ -150,7 +150,7 @@ if __name__ == "__main__":
 
     root_path = "./LIT-PCBA"
 
-    output_path = "path/to/output_dir"
+    output_path = "/path/to/output_dir"
     targets = os.listdir(root_path)
     auc_list = []
     bedroc_list = []
