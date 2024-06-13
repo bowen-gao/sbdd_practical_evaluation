@@ -101,11 +101,6 @@ python vs_dude.py
 
 
 
-bash test_sbdd.sh
-
-
-
-
 ### Using Deep Encoders to do evaluation
 
 ```bash
