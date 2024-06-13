@@ -50,7 +50,9 @@ use sbdd.yaml and encoder.yaml
 
 ## Model Training and Sampling
 
-The code for models used in our benchmark is from their official repositories: 
+The code for the five models we tested is located in the models folder. We have made minor modifications to the dataset reading code to accommodate our new data. However, the training and sampling execution methods are consistent with those in the official repositories. 
+
+For detailed execution instructions, please refer to the official documentation of the respective repositories:
 
 LiGAN: https://github.com/mattragoza/LiGAN
 
@@ -61,8 +63,6 @@ Pocket2Mol: https://github.com/pengxingang/Pocket2Mol
 TargetDiff: https://github.com/guanjq/targetdiff
 
 MolCRAFT: https://github.com/AlgoMole/MolCRAFT
-
-We did some modifications to fit our dataset. 
 
 Modified Code for each model can be found at model dir
 
